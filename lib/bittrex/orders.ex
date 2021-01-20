@@ -72,7 +72,7 @@ defmodule Bittrex.Orders do
   Create a new order.
   """
   @spec create_order(%Client{}, %{
-          market_name: String.t(),
+          market_symbol: String.t(),
           direction: String.t(),
           type: String.t(),
           quantity: number(),
