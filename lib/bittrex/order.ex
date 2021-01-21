@@ -7,7 +7,7 @@ defmodule Bittrex.Order do
 
   @typedoc """
   - `id`: unique ID of this order.
-  - `market_name`: unique name of the market this order is being placed on.
+  - `market_symbol`: unique name of the market this order is being placed on.
   - `direction`: order direction.
   - `type`: order type.
   - `quantity`: quantity.
@@ -25,7 +25,7 @@ defmodule Bittrex.Order do
   """
   @type t :: %__MODULE__{
           id: String.t(),
-          market_name: String.t(),
+          market_symbol: String.t(),
           direction: String.t(),
           type: String.t(),
           quantity: number(),
@@ -44,7 +44,7 @@ defmodule Bittrex.Order do
 
   defstruct [
     :id,
-    :market_name,
+    :market_symbol,
     :direction,
     :type,
     :quantity,
@@ -65,7 +65,7 @@ defmodule Bittrex.Order do
   def new(data) do
     %__MODULE__{
       id: data["id"],
-      market_name: data["marketName"],
+      market_symbol: data["marketSymbol"],
       direction: data["direction"],
       type: data["type"],
       quantity: data["quantity"],
